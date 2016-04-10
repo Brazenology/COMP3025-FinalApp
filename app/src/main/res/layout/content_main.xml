@@ -11,7 +11,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.kallio.brendan.caloriecounter.MainActivity"
     tools:showIn="@layout/activity_main"
-    android:background="#afffea">
+    android:background="#3aab8e">
 
     <TextView
         android:layout_width="wrap_content"
@@ -25,20 +25,21 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/two"
+        android:layout_height="@dimen/five"
         android:id="@+id/textView"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:background="#1f2861"
-        android:layout_below="@+id/titleTextView" />
+        android:layout_below="@+id/titleTextView"
+        android:layout_marginTop="15px" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="@dimen/HUNDRED5"
         android:text="Calories Remaining Today:"
         android:id="@+id/textView2"
-        android:background="#f5ff9b"
-        android:textSize="65px"
+        android:background="#e3e3e3"
+        android:textSize="60px"
         android:padding="30px"
         android:textStyle="bold|italic"
         android:layout_below="@+id/textView8"
@@ -61,12 +62,12 @@
         android:layout_height="@dimen/hundred50"
         android:text="Consecutive Days:"
         android:id="@+id/textView4"
-        android:background="#f5ff9b"
+        android:background="#e3e3e3"
         android:textSize="65px"
         android:padding="30px"
         android:layout_below="@+id/textView"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="20px"
         android:layout_alignEnd="@+id/textView"
         android:textStyle="bold|italic" />
 
@@ -98,7 +99,7 @@
         android:layout_height="@dimen/hundred50"
         android:text="Caloric Intake Per Day:"
         android:id="@+id/textView6"
-        android:background="#f5ff9b"
+        android:background="#e3e3e3"
         android:textSize="65px"
         android:padding="30px"
         android:textStyle="bold|italic"
@@ -127,21 +128,22 @@
         android:layout_height="wrap_content"
         android:text="UPDATE"
         android:id="@+id/button"
-        android:background="#387532"
+        android:background="#1d2a6c"
         android:layout_alignBottom="@+id/textView2"
         android:layout_marginBottom="10px"
         android:layout_alignEnd="@+id/textView2"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="10px"
         android:layout_marginRight="10px"
-        android:textSize="50px" />
+        android:textSize="50px"
+        android:textColor="#ffffff" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="@dimen/hundred50"
         android:text="Current Day Completion(%):"
         android:id="@+id/textView8"
-        android:background="#f5ff9b"
+        android:background="#e3e3e3"
         android:textSize="60px"
         android:padding="30px"
         android:textStyle="bold|italic"
@@ -165,5 +167,44 @@
         android:layout_alignBottom="@+id/textView8"
         android:layout_marginTop="15px"
         android:textColor="#1f9310" />
+
+    <TextView
+        android:layout_width="@dimen/hundred490"
+        android:layout_height="@dimen/hundred250"
+        android:id="@+id/textView10"
+        android:background="#e3e3e3"
+        android:textSize="45px"
+        android:padding="30px"
+        android:textStyle="bold|italic"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="20px"
+        android:text="Current Grade:"
+        android:textAlignment="center" />
+
+    <Button
+        android:layout_width="@dimen/hundred490"
+        android:layout_height="@dimen/hundred250"
+        android:text="Complete Day"
+        android:id="@+id/button2"
+        android:layout_alignBottom="@+id/textView10"
+        android:layout_toEndOf="@+id/textView10"
+        android:background="#feb118"
+        android:layout_marginLeft="20px"
+        android:textSize="65px"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="A"
+        android:id="@+id/textView11"
+        android:layout_alignBottom="@+id/textView10"
+        android:layout_alignStart="@+id/button"
+        android:layout_alignEnd="@+id/textView10"
+        android:layout_alignTop="@+id/textView10"
+        android:layout_marginTop="90px"
+        android:textAlignment="center"
+        android:textSize="120px" />
 
 </RelativeLayout>
