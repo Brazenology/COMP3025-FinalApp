@@ -15,23 +15,12 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Calorie Tracker Plus"
-        android:id="@+id/titleTextView"
-        android:layout_alignParentStart="true"
-        android:textStyle="bold"
-        android:layout_alignEnd="@+id/lineTextView" />
-
-    <TextView
-        android:layout_width="wrap_content"
         android:layout_height="@dimen/five"
         android:id="@+id/lineTextView"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:background="#1f2861"
-        android:layout_below="@+id/titleTextView"
-        android:layout_marginTop="15px" />
+        android:layout_marginTop="100px" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -72,13 +61,13 @@
         android:textStyle="bold|italic" />
 
     <ImageButton
-        android:layout_width="wrap_content"
+        android:layout_width="100px"
         android:layout_height="wrap_content"
         android:id="@+id/settingsButton"
         android:background="@android:drawable/ic_menu_info_details"
-        android:layout_alignEnd="@+id/titleTextView"
         android:layout_alignParentTop="true"
-        android:layout_alignBottom="@+id/lineTextView" />
+        android:layout_alignBottom="@+id/lineTextView"
+        android:layout_alignEnd="@+id/lineTextView" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -207,5 +196,14 @@
         android:layout_marginTop="90px"
         android:textAlignment="center"
         android:textSize="120px" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView4"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/logo"
+        android:layout_alignBottom="@+id/settingsButton" />
 
 </RelativeLayout>
