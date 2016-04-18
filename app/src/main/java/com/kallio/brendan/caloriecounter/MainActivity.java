@@ -24,6 +24,12 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this, UpdateActivity.class);
         startActivity(i);
     }
+
+    public void onUpdateButtonClick(View v){
+        Intent i = new Intent(this, CaloriesActivity.class);
+        startActivity(i);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
