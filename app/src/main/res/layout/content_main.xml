@@ -61,10 +61,10 @@
         android:textSize="65px"
         android:layout_alignBottom="@+id/consecutiveDaysTextView"
         android:layout_alignTop="@+id/consecutiveDaysTextView"
-        android:layout_alignEnd="@+id/completionPercent"
+        android:layout_alignEnd="@+id/largeMealCounter"
         android:layout_toEndOf="@+id/caloriesRemainingEditText"
         android:paddingLeft="250px"
-        android:layout_alignStart="@+id/completionPercent" />
+        android:layout_alignStart="@+id/largeMealCounter" />
 
     <Button
         android:layout_width="@dimen/hundred4"
@@ -101,7 +101,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="0"
-        android:id="@+id/completionPercent"
+        android:id="@+id/largeMealCounter"
         android:paddingTop="25px"
         android:textStyle="bold"
         android:textSize="65px"

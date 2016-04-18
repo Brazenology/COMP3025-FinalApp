@@ -25,14 +25,20 @@ public class CaloriesActivity extends Activity {
     }
 
     public void onOkButtonClick(View v) {
+
         //Gets the initial value of calories remaining
         Intent intent = getIntent();
         int userValue = intent.getIntExtra("parsedNumber", 0);
+        int currentLargeMeals = intent.getIntExtra("parsedLargeMeals", 0);
 
         EditText displayCalories = (EditText) findViewById(R.id.userInput);
 
         //int that holds the updated calorie intake for the day
         int caloriesUpdate = 0;
+
+        if(Integer.parseInt(displayCalories.getText().toString()) >= 500) {
+            currentLargeMeals++;
+        }
 
 
         if (caloriesUpdate >= 0 || caloriesUpdate <= 0 ) {
@@ -44,6 +50,7 @@ public class CaloriesActivity extends Activity {
 
         Intent intent2 = new Intent(this, MainActivity.class);
         intent2.putExtra("caloriesUpdate", caloriesUpdate);
+        intent2.putExtra("isLargeMeal", currentLargeMeals);
         startActivity(intent2);
 
     }

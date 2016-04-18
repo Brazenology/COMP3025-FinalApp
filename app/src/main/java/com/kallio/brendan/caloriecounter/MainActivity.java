@@ -22,10 +22,15 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        TextView largeMealCounter = (TextView) findViewById(R.id.largeMealCounter);
         EditText calories = (EditText)findViewById(R.id.caloriesRemainingEditText);
+
         Intent intent2 = getIntent();
         int caloriesUpdate = intent2.getIntExtra("caloriesUpdate", 0);
         calories.setText("" + caloriesUpdate);
+        int largeMeal = intent2.getIntExtra("isLargeMeal", 0);
+
+        largeMealCounter.setText("" + largeMeal);
 
         //int currentCalories = Integer.parseInt(calories.getText().toString());
 
@@ -34,10 +39,12 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onCompleteDayButtonClick (View v) {
+        TextView largeMealsEaten = (TextView) findViewById(R.id.largeMealCounter);
         EditText calories = (EditText)findViewById(R.id.caloriesRemainingEditText);
         TextView consecDays = (TextView) findViewById(R.id.consecDays);
         int currentConsecDays = Integer.parseInt(consecDays.getText().toString());
 
+        //Checks to see if consecutive days should be incremented up or reset
         if (Integer.parseInt(calories.getText().toString()) >= -250 && Integer.parseInt(calories.getText().toString())  <= 250) {
             currentConsecDays++;
             consecDays.setText("" + currentConsecDays);
@@ -46,24 +53,23 @@ public class MainActivity extends AppCompatActivity {
             consecDays.setText("" + 0);
         }
 
+        //resets calories remaining and large meals eaten
         calories.setText("" + 0);
-    }
-
-    public void onSetupButtonClick(View v){
-        Intent i = new Intent(this, UpdateActivity.class);
-        startActivity(i);
+        largeMealsEaten.setText("" + 0);
     }
 
     public void onUpdateButtonClick(View v){
 
         EditText calories = (EditText)findViewById(R.id.caloriesRemainingEditText);
-
+        TextView largeMeals = (TextView) findViewById(R.id.largeMealCounter);
 
         String caloriesRemaining = calories.getText().toString();
         int caloriesParsed = Integer.parseInt(caloriesRemaining);
+        int largeMealsParsed = Integer.parseInt(largeMeals.getText().toString());
 
         Intent intent = new Intent(this, CaloriesActivity.class);
         intent.putExtra("parsedNumber", caloriesParsed);
+        intent.putExtra("parsedLargeMeals", largeMealsParsed);
         startActivity(intent);
     }
 
