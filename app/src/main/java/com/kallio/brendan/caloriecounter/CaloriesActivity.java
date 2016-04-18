@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 /**
  * Created by Owner on 2016-04-17.
@@ -16,6 +17,9 @@ public class CaloriesActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calories_update);
+
+        Intent intent = getIntent();
+        int userValue = intent.getIntExtra("parsedNumber", 0);
     }
 
     public void onBackButtonClick(View v) {
@@ -24,13 +28,26 @@ public class CaloriesActivity extends Activity {
     }
 
     public void onOkButtonClick(View v) {
-        Intent i = new Intent(this, MainActivity.class);
-        EditText caloriesEaten = (EditText) findViewById(R.id.userInput);
+        //Gets the initial value of calories remaining
+        Intent intent = getIntent();
+        int userValue = intent.getIntExtra("parsedNumber", 0);
 
-        Bundle bundle = new Bundle();
+        EditText displayCalories = (EditText) findViewById(R.id.userInput);
 
-        i.putExtra("CALORIESEATEN", caloriesEaten.getText().toString());
-        i.putExtras(bundle);
-        startActivity(i);
+        //int that holds the updated calorie intake for the day
+        int caloriesUpdate = Integer.parseInt(displayCalories.getText().toString());
+
+
+        if (caloriesUpdate > 0) {
+            caloriesUpdate = userValue - Integer.parseInt(displayCalories.getText().toString());
+        }
+        else {
+            caloriesUpdate = 0;
+        }
+
+        Intent intent2 = new Intent(this, MainActivity.class);
+        intent2.putExtra("caloriesUpdate", caloriesUpdate);
+        startActivity(intent2);
+
     }
 }

@@ -21,7 +21,8 @@
         android:layout_marginLeft="30px"
         android:layout_marginTop="30px"
         android:layout_marginRight="30px"
-        android:background="#dbdbdb" />
+        android:background="#dbdbdb"
+        android:text="0" />
 
     <TableLayout
         android:layout_width="match_parent"

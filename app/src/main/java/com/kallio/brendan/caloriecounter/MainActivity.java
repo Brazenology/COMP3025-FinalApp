@@ -9,6 +9,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,8 +22,27 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Bundle bundle = getIntent().getExtras();
+        //TextView caloriesRemaining = (TextView) findViewById(R.id.caloriesRemaining);
+        //caloriesRemaining.setText(getIntent().getExtras().getString("CALORIESEATEN"));
+
+        updateFields();
     }
+
+    private void updateFields() {
+
+        Intent intent2 = getIntent();
+        int caloriesUpdate = intent2.getIntExtra("caloriesUpdate", 0);
+
+        EditText calories = (EditText)findViewById(R.id.caloriesRemainingEditText);
+        int currentCalories = Integer.parseInt(calories.getText().toString());
+
+        if (caloriesUpdate < currentCalories) {
+            if(caloriesUpdate > 0) {
+                calories.setText("" + caloriesUpdate);
+            }
+        }
+    }
+
 
     public void onSetupButtonClick(View v){
         Intent i = new Intent(this, UpdateActivity.class);
@@ -29,8 +50,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onUpdateButtonClick(View v){
-        Intent i = new Intent(this, CaloriesActivity.class);
-        startActivity(i);
+        EditText calories = (EditText)findViewById(R.id.caloriesRemainingEditText);
+        String caloriesRemaining = calories.getText().toString();
+        int caloriesParsed = Integer.parseInt(caloriesRemaining);
+
+        Intent intent = new Intent(this, CaloriesActivity.class);
+        intent.putExtra("parsedNumber", caloriesParsed);
+        startActivity(intent);
     }
 
     @Override
