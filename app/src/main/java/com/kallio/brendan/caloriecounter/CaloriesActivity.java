@@ -30,6 +30,7 @@ public class CaloriesActivity extends Activity {
         Intent intent = getIntent();
         int userValue = intent.getIntExtra("parsedNumber", 0);
         int currentLargeMeals = intent.getIntExtra("parsedLargeMeals", 0);
+        int consecDays = intent.getIntExtra("parsedConsecDays", 0);
 
         EditText displayCalories = (EditText) findViewById(R.id.userInput);
 
@@ -51,6 +52,7 @@ public class CaloriesActivity extends Activity {
         Intent intent2 = new Intent(this, MainActivity.class);
         intent2.putExtra("caloriesUpdate", caloriesUpdate);
         intent2.putExtra("isLargeMeal", currentLargeMeals);
+        intent2.putExtra("consecDaysPassed", consecDays);
         startActivity(intent2);
 
     }
