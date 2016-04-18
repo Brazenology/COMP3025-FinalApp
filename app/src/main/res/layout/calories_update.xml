@@ -17,7 +17,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="@dimen/hundred"
-        android:id="@+id/editText3"
+        android:id="@+id/userInput"
         android:layout_marginLeft="30px"
         android:layout_marginTop="30px"
         android:layout_marginRight="30px"
@@ -48,7 +48,8 @@
                 android:id="@+id/button4"
                 android:layout_column="28"
                 android:layout_marginRight="40px"
-                android:layout_marginTop="100px" />
+                android:layout_marginTop="100px"
+                android:onClick="onOkButtonClick" />
         </TableRow>
 
     </TableLayout>

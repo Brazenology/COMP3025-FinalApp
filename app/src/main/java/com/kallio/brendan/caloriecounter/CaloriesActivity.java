@@ -4,11 +4,14 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 /**
  * Created by Owner on 2016-04-17.
  */
 public class CaloriesActivity extends Activity {
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,6 +20,17 @@ public class CaloriesActivity extends Activity {
 
     public void onBackButtonClick(View v) {
         Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
+    }
+
+    public void onOkButtonClick(View v) {
+        Intent i = new Intent(this, MainActivity.class);
+        EditText caloriesEaten = (EditText) findViewById(R.id.userInput);
+
+        Bundle bundle = new Bundle();
+
+        i.putExtra("CALORIESEATEN", caloriesEaten.getText().toString());
+        i.putExtras(bundle);
         startActivity(i);
     }
 }
