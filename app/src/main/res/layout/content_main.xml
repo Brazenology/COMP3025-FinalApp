@@ -67,7 +67,8 @@
         android:background="@android:drawable/ic_menu_info_details"
         android:layout_alignParentTop="true"
         android:layout_alignBottom="@+id/lineTextView"
-        android:layout_alignEnd="@+id/lineTextView" />
+        android:layout_alignEnd="@+id/lineTextView"
+        android:onClick="onSetupButtonClick" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -125,7 +126,8 @@
         android:layout_marginLeft="10px"
         android:layout_marginRight="10px"
         android:textSize="50px"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:onClick="onUpdateButtonClick" />
 
     <TextView
         android:layout_width="wrap_content"

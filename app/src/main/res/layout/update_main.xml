@@ -77,7 +77,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Type in your what you think is best:"
+        android:text="Type in what you think is best:"
         android:id="@+id/textView6"
         android:layout_weight="0.04"
         android:textStyle="italic"
@@ -107,7 +107,8 @@
                 android:id="@+id/button"
                 android:layout_column="4"
                 android:layout_marginLeft="25px"
-                android:layout_marginTop="100px" />
+                android:layout_marginTop="100px"
+                android:onClick="onBackButtonClick" />
 
             <Button
                 android:layout_width="@dimen/hundred520"
