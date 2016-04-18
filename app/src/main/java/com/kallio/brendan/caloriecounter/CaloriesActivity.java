@@ -17,9 +17,6 @@ public class CaloriesActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calories_update);
-
-        Intent intent = getIntent();
-        int userValue = intent.getIntExtra("parsedNumber", 0);
     }
 
     public void onBackButtonClick(View v) {
@@ -35,14 +32,14 @@ public class CaloriesActivity extends Activity {
         EditText displayCalories = (EditText) findViewById(R.id.userInput);
 
         //int that holds the updated calorie intake for the day
-        int caloriesUpdate = Integer.parseInt(displayCalories.getText().toString());
+        int caloriesUpdate = 0;
 
 
-        if (caloriesUpdate > 0) {
+        if (caloriesUpdate >= 0 || caloriesUpdate <= 0 ) {
             caloriesUpdate = userValue - Integer.parseInt(displayCalories.getText().toString());
         }
         else {
-            caloriesUpdate = 0;
+            caloriesUpdate = userValue;
         }
 
         Intent intent2 = new Intent(this, MainActivity.class);

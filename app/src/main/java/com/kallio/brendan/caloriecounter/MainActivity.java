@@ -22,27 +22,32 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //TextView caloriesRemaining = (TextView) findViewById(R.id.caloriesRemaining);
-        //caloriesRemaining.setText(getIntent().getExtras().getString("CALORIESEATEN"));
-
-        updateFields();
-    }
-
-    private void updateFields() {
-
+        EditText calories = (EditText)findViewById(R.id.caloriesRemainingEditText);
         Intent intent2 = getIntent();
         int caloriesUpdate = intent2.getIntExtra("caloriesUpdate", 0);
+        calories.setText("" + caloriesUpdate);
 
-        EditText calories = (EditText)findViewById(R.id.caloriesRemainingEditText);
-        int currentCalories = Integer.parseInt(calories.getText().toString());
+        //int currentCalories = Integer.parseInt(calories.getText().toString());
 
-        if (caloriesUpdate < currentCalories) {
-            if(caloriesUpdate > 0) {
-                calories.setText("" + caloriesUpdate);
-            }
-        }
     }
 
+
+
+    public void onCompleteDayButtonClick (View v) {
+        EditText calories = (EditText)findViewById(R.id.caloriesRemainingEditText);
+        TextView consecDays = (TextView) findViewById(R.id.consecDays);
+        int currentConsecDays = Integer.parseInt(consecDays.getText().toString());
+
+        if (Integer.parseInt(calories.getText().toString()) >= -250 && Integer.parseInt(calories.getText().toString())  <= 250) {
+            currentConsecDays++;
+            consecDays.setText("" + currentConsecDays);
+        }
+        else {
+            consecDays.setText("" + 0);
+        }
+
+        calories.setText("" + 0);
+    }
 
     public void onSetupButtonClick(View v){
         Intent i = new Intent(this, UpdateActivity.class);
@@ -50,7 +55,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onUpdateButtonClick(View v){
+
         EditText calories = (EditText)findViewById(R.id.caloriesRemainingEditText);
+
+
         String caloriesRemaining = calories.getText().toString();
         int caloriesParsed = Integer.parseInt(caloriesRemaining);
 

@@ -46,19 +46,9 @@
         android:padding="30px"
         android:layout_below="@+id/lineTextView"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="20px"
+        android:layout_marginTop="100px"
         android:layout_alignEnd="@+id/lineTextView"
         android:textStyle="bold|italic" />
-
-    <ImageButton
-        android:layout_width="100px"
-        android:layout_height="wrap_content"
-        android:id="@+id/settingsButton"
-        android:background="@android:drawable/ic_menu_info_details"
-        android:layout_alignParentTop="true"
-        android:layout_alignBottom="@+id/lineTextView"
-        android:layout_alignEnd="@+id/lineTextView"
-        android:onClick="onSetupButtonClick" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -69,39 +59,12 @@
         android:paddingTop="25px"
         android:textStyle="bold"
         android:textSize="65px"
-        android:layout_alignTop="@+id/consecutiveDaysTextView"
-        android:layout_toStartOf="@+id/settingsButton"
         android:layout_alignBottom="@+id/consecutiveDaysTextView"
-        android:layout_marginTop="15px" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/hundred50"
-        android:text="Caloric Intake Per Day:"
-        android:id="@+id/intakeTextView"
-        android:background="#e3e3e3"
-        android:textSize="65px"
-        android:padding="30px"
-        android:textStyle="bold|italic"
-        android:layout_below="@+id/consecutiveDaysTextView"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="20px"
-        android:layout_alignParentEnd="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="0"
-        android:id="@+id/intake"
-        android:paddingTop="25px"
-        android:textStyle="bold"
-        android:textSize="65px"
-        android:layout_alignTop="@+id/intakeTextView"
-        android:layout_alignStart="@+id/consecDays"
-        android:layout_toStartOf="@+id/settingsButton"
-        android:layout_alignBottom="@+id/intakeTextView"
-        android:layout_marginTop="15px" />
+        android:layout_alignTop="@+id/consecutiveDaysTextView"
+        android:layout_alignEnd="@+id/completionPercent"
+        android:layout_toEndOf="@+id/caloriesRemainingEditText"
+        android:paddingLeft="250px"
+        android:layout_alignStart="@+id/completionPercent" />
 
     <Button
         android:layout_width="@dimen/hundred4"
@@ -122,16 +85,16 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="@dimen/hundred50"
-        android:text="Current Day Completion(%):"
+        android:text="Large Meals Today (500+):"
         android:id="@+id/completionPercentTextView"
         android:background="#e3e3e3"
         android:textSize="60px"
         android:padding="30px"
         android:textStyle="bold|italic"
-        android:layout_below="@+id/intakeTextView"
         android:layout_alignParentStart="true"
         android:layout_marginTop="20px"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/consecutiveDaysTextView" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -144,10 +107,11 @@
         android:textSize="65px"
         android:layout_alignTop="@+id/completionPercentTextView"
         android:layout_alignEnd="@+id/updateButton"
-        android:layout_alignStart="@+id/intake"
         android:layout_alignBottom="@+id/completionPercentTextView"
         android:layout_marginTop="15px"
-        android:textColor="#1f9310" />
+        android:textColor="#1f9310"
+        android:layout_toEndOf="@+id/caloriesRemainingEditText"
+        android:paddingLeft="250px" />
 
     <TextView
         android:layout_width="@dimen/hundred490"
@@ -173,7 +137,8 @@
         android:layout_marginLeft="20px"
         android:textSize="65px"
         android:textColor="#ffffff"
-        android:padding="20px" />
+        android:padding="20px"
+        android:onClick="onCompleteDayButtonClick" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -190,13 +155,14 @@
         android:textSize="120px" />
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="1040dp"
         android:layout_height="wrap_content"
         android:id="@+id/imageView4"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:src="@drawable/logo"
-        android:layout_alignBottom="@+id/settingsButton" />
+        android:layout_alignEnd="@+id/consecDays"
+        android:layout_above="@+id/consecDays" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -205,8 +171,9 @@
         android:layout_above="@+id/updateButton"
         android:layout_centerHorizontal="true"
         android:textSize="150px"
-        android:text="100"
+        android:text="0"
         android:singleLine="true"
-        android:editable="false" />
+        android:editable="true"
+        android:inputType="text" />
 
 </RelativeLayout>

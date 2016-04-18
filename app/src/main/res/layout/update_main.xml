@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Male"
-        android:id="@+id/radioButton"
+        android:id="@+id/maleRadioButton"
         android:textSize="75px"
         android:layout_weight="0.04"
         android:layout_marginLeft="50px" />
@@ -39,7 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Female"
-        android:id="@+id/radioButton2"
+        android:id="@+id/femaleRadioButton"
         android:textSize="75px"
         android:layout_weight="0.07"
         android:layout_marginLeft="50px" />
@@ -57,9 +57,10 @@
     <EditText
         android:layout_width="232dp"
         android:layout_height="@dimen/hundred"
-        android:id="@+id/editText"
+        android:id="@+id/weightEditText"
         android:background="#f5f4f4"
-        android:layout_marginLeft="50px" />
+        android:layout_marginLeft="50px"
+        android:text="0" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -87,9 +88,10 @@
     <EditText
         android:layout_width="238dp"
         android:layout_height="@dimen/hundred"
-        android:id="@+id/editText2"
+        android:id="@+id/customWeightEditText"
         android:background="#f5f4f4"
-        android:layout_marginLeft="50px" />
+        android:layout_marginLeft="50px"
+        android:text="0" />
 
     <TableLayout
         android:layout_width="match_parent"
@@ -116,7 +118,8 @@
                 android:text="OK"
                 android:id="@+id/button2"
                 android:layout_column="5"
-                android:layout_marginTop="100px" />
+                android:layout_marginTop="100px"
+                android:onClick="onOkButtonClick" />
         </TableRow>
     </TableLayout>
 
