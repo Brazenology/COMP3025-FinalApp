@@ -18,7 +18,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView3"
+        android:id="@+id/logo"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:src="@drawable/logo"
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Enter how many calories you have recently eaten:"
-        android:id="@+id/textView7"
+        android:id="@+id/description"
         android:textStyle="italic"
         android:layout_marginTop="30px"
         android:layout_marginLeft="30px" />
@@ -52,7 +52,7 @@
         android:layout_width="344dp"
         android:layout_height="wrap_content"
         android:text="OK"
-        android:id="@+id/button3"
+        android:id="@+id/okButton"
         android:layout_gravity="center_horizontal"
         android:onClick="onOkButtonClick"
         android:layout_marginTop="50px"

@@ -123,7 +123,7 @@
         android:textStyle="bold|italic"
         android:layout_below="@+id/calroiesRemainingTextView"
         android:layout_marginTop="20px"
-        android:text="Current Grade:"
+        android:text="Grade (Max. 300):"
         android:textAlignment="center" />
 
     <Button
@@ -157,7 +157,7 @@
     <ImageView
         android:layout_width="1040dp"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView4"
+        android:id="@+id/logo"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:src="@drawable/logo"
